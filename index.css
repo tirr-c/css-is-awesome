@@ -1,0 +1,144 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-family: "Roboto", sans-serif;
+}
+
+#css-is-awesome {
+  animation:
+    0.5s ease-in 1 box,
+    0.5s ease-in 4s infinite alternate box-bounce,
+    0.25s steps(1, start) 4s infinite yellow-flash;
+  width: 200px;
+  height: 200px;
+  border: 2px solid black;
+  padding: 2px 4px;
+
+  font-size: 72px;
+  line-height: 63px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+#css-is-awesome > span {
+  height: 63px;
+}
+
+#css::after {
+  animation: 2s linear 1 css;
+  content: "CSS";
+}
+
+#is::after {
+  animation: 2.5s linear 1 is;
+  content: "IS";
+}
+
+#awesome::after {
+  animation: 4s linear 1 awesome, 0.5s steps(1, end) 4s infinite green-text-flash;
+  content: "AWESOME";
+}
+
+@keyframes box {
+  0% {
+    width: 0;
+    height: 0;
+    border-width: 0;
+    padding: 0;
+  }
+  100% {
+    width: 200px;
+    height: 200px;
+    border-width: 2px;
+  }
+}
+
+@keyframes css {
+  0%, 35% {
+    content: "";
+  }
+  40% {
+    content: "C";
+  }
+  60% {
+    content: "CS";
+  }
+  65% {
+    content: "CSS";
+  }
+}
+
+@keyframes is {
+  0%, 65% {
+    content: "";
+  }
+  75% {
+    content: "I";
+  }
+  85% {
+    content: "IS";
+  }
+}
+
+@keyframes awesome {
+  0%, 60% {
+    content: "";
+  }
+  65%, 67.5% {
+    content: "A";
+  }
+  70% {
+    content: "AW";
+  }
+  80% {
+    content: "AWE";
+  }
+  82.5%, 92.5% {
+    content: "AWES";
+  }
+  95%, 96.75% {
+    content: "AWESO";
+  }
+  97%, 99.9% {
+    content: "AWESOM";
+  }
+  100% {
+    content: "AWESOME";
+  }
+}
+
+@keyframes box-bounce {
+  to {
+    transform: scale(1.2);
+  }
+}
+
+@keyframes yellow-flash {
+  50% {
+    background-color: lightyellow;
+  }
+  100% {
+    background-color: transparent;
+  }
+}
+
+@keyframes green-text-flash {
+  50% {
+    color: green;
+  }
+  100% {
+    color: initial;
+  }
+}
